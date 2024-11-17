@@ -90,8 +90,10 @@ const Home = ({ theme }) => {
                     </defs>
                 </svg>
             </div>
-            <section className="grid place-items-center mt-36 gap-y-6">
-            <span className="whitespace-nowrap flex items-center gap-x-2 rounded-full bg-[#222222] px-4 py-1.5">
+            <section className="grid place-items-center h-screen w-full">
+            <div className='w-3/5 grid gap-y-6 py-36'>
+            <div className='flex justify-center w-full'>
+            <span className="whitespace-nowrap flex justify-center items-center gap-x-2 rounded-full bg-[#222222] px-4 py-1.5">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="8" cy="8" r="8" fill="#10B981" fillOpacity="0.34"/>
                     <circle cx="8" cy="8" r="4" fill="#10B981"/>
@@ -100,11 +102,12 @@ const Home = ({ theme }) => {
                     Hello! I’m open for projects
                 </p>
             </span>
-            <h1 className="font-extrabold text-5xl text-center w-3/5">
+            </div>
+            <h1 className="font-extrabold text-5xl text-center">
                 Experienced <span className="text-[#006FFF]">full-stack developer</span> shaping code into <span className="text-[#006FFF]">digital experience</span>.
             </h1>
-            <p className="text-center w-[45%]">Helping startups and brands to craft expressive and engaging solutions for their software needs.</p>
-            <div className="flex gap-x-6 mt-5">
+            <p className="text-center px-24">Helping startups and brands to craft expressive and engaging solutions for their software needs.</p>
+            <div className="flex justify-center gap-x-6 mt-5">
                 <a 
                     href={Resume}
                     download
@@ -123,6 +126,7 @@ const Home = ({ theme }) => {
                     <span className="size-3 bg-[#006FFF] rounded-full"></span>
                     Contacts
                 </a>
+            </div>
             </div>
             </section>
 
