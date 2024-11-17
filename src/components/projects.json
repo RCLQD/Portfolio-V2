@@ -1,0 +1,31 @@
+{
+    "Projects": [
+        {
+            "P_id":"1",
+            "project_name":"AnimeHub",
+            "status":"Live",
+            "description": "This website allows users to explore, search, and discover the latest trending anime, providing detailed information on genres, synopses, and links for watching.",
+            "link":"https://anime-hub-black.vercel.app/",
+            "github":"https://github.com/RCLQD/AnimeHub",
+            "img":"/images/animehub.png"
+        },
+        {
+            "P_id":"2",
+            "project_name":"To-Do List",
+            "status":"Offline",
+            "description": "Effortlessly manage your tasks with our easy-to-use tool that lets you create, edit, and delete tasks, helping you stay organized and boost productivity all in one place.",
+            "link":"",
+            "github":"https://github.com/RCLQD/To-Do-List",
+            "img":"/images/todolist.png"
+        },
+        {
+            "P_id":"3",
+            "project_name":"Gallery",
+            "status":"Offline",
+            "description": "This website allows you to store and organize photos in folders. It functions as a gallery website, helping users keep their cherished memories organized and easily accessible.",
+            "link":"",
+            "github":"https://github.com/RCLQD/Gallery",
+            "img":"/images/gallery.png"
+        }
+    ]
+}

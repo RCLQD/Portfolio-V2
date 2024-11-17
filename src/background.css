@@ -1,0 +1,18 @@
+/* Default light theme */
+html[data-theme='light'] {
+    --background-color: white;
+    --text-color: black;
+  }
+  
+  /* Dark theme */
+  html[data-theme='dark'] {
+    --background-color: black;
+    --text-color: white;
+  }
+  
+  /* Apply the theme styles to the body or any other elements */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
