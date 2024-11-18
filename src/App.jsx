@@ -29,8 +29,8 @@ const App = () => {
       sectionObj.ref.current.scrollIntoView({
         behavior: smoothScroll ? "smooth" : "auto",
       });
-      setCurrentSection(section); // Update the current section state
-      window.history.replaceState(null, "", `/${section}`); // Update URL without hash
+      setCurrentSection(section);
+      window.history.replaceState(null, "", `/${section}`);
     }
   };
 
@@ -44,11 +44,10 @@ const App = () => {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
 
-    // Determine the section based on the URL path
     const path = window.location.pathname.replace("/", "");
     const initialSection = sections.find((s) => s.name === path)?.name || "Home";
     setCurrentSection(initialSection);
-    scrollToSection(initialSection, false); // Scroll to the initial section
+    scrollToSection(initialSection, false);
   }, [theme]);
 
   useEffect(() => {
@@ -64,19 +63,17 @@ const App = () => {
           const visibleSection = sections.find((s) => s.ref.current === entry.target)?.name;
           if (visibleSection) {
             setCurrentSection(visibleSection);
-            window.history.replaceState(null, "", `/${visibleSection}`); // Update URL without hash
+            window.history.replaceState(null, "", `/${visibleSection}`);
           }
         }
       });
     }, observerOptions);
 
-    // Observe each section
     sections.forEach((section) => {
       if (section.ref.current) observer.observe(section.ref.current);
     });
 
     return () => {
-      // Cleanup observers
       sections.forEach((section) => {
         if (section.ref.current) observer.unobserve(section.ref.current);
       });
