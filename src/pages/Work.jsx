@@ -9,7 +9,7 @@ import projectFiles from '../components/projects.json'
 const Work = ({ theme }) => {
     return(
         <main className="grid place-items-center gap-y-10 font-montserrat w-full h-full px-20 py-20">
-            <section className="space-y-4 w-[70rem]">
+            <section className="space-y-4 w-[65rem]">
                 <div className="flex items-center justify-center gap-x-2">
                     <span className="bg-[#006FFF] grid place-items-center rounded-full size-5">
                         <Asterisk className="size-5" />

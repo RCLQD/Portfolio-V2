@@ -16,7 +16,7 @@ const Navbar = ({ onScrollTo, theme, toggleTheme }) => {
 
     return (
         <nav 
-            className={`flex justify-between fixed top-0 w-full z-10 px-12 py-3 border-b border-opacity-20
+            className={`flex justify-between fixed top-0 w-full z-50 px-12 py-3 border-b border-opacity-20
             ${scrolled ? (theme === 'dark' ? 'bg-black border-white' : 'bg-white border-black') : 'bg-transparent border-transparent'}`}
         >
             <section className='flex items-center'>
