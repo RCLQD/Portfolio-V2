@@ -1,4 +1,6 @@
 import { Icon } from '@iconify/react';
+import { Dock, DockIcon } from "@/components/ui/dock";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip"
 
 const Footer = ({ theme }) => {
     return(
@@ -11,16 +13,45 @@ const Footer = ({ theme }) => {
             )}
             <p>Reysil M. Clarion</p>
         </aside>
-        <nav className="flex items-center gap-x-2">
-            <a href="https://www.linkedin.com/in/reysilclarion/" target="_blank">
-                <Icon icon="circum:linkedin" className="size-10" />
-            </a>
-            <a href="https://github.com/RCLQD" target="_blank">
-                <Icon icon="akar-icons:github-outline-fill" className="size-9" />
-            </a>
-            <a href="https://www.facebook.com/reysil.clarion.1" target="_blank">
-                <Icon icon="qlementine-icons:facebook-16" className="size-9" />
-            </a>
+        <nav className="flex items-center">
+            <Dock direction="middle" className="h-[55px] gap-x-1">
+                <DockIcon>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a href="https://www.linkedin.com/in/reysilclarion/" target="_blank">
+                                    <Icon icon="circum:linkedin" className="size-10" />
+                                </a>
+                            </TooltipTrigger>
+                            <TooltipContent>LinkedIn</TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+                </DockIcon>
+                <DockIcon>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a href="https://github.com/RCLQD" target="_blank">
+                                    <Icon icon="akar-icons:github-outline-fill" className="size-9" />
+                                </a>
+                                </TooltipTrigger>
+                            <TooltipContent>GitHub</TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+                </DockIcon>
+                <DockIcon>
+                <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a href="https://www.facebook.com/reysil.clarion.1" target="_blank">
+                                    <Icon icon="qlementine-icons:facebook-16" className="size-9" />
+                                </a>   
+                            </TooltipTrigger>
+                            <TooltipContent>Facebook</TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider> 
+                </DockIcon>
+            </Dock>
         </nav>
         </footer>
     )

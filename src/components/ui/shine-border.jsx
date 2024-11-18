@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 export default function ShineBorder({
   borderRadius = 8,
   borderWidth = 1.5,
-  duration = 14,
+  duration = 0,
   color = "#000000",
   className,
   children
@@ -27,7 +27,7 @@ export default function ShineBorder({
         }
       }
       className={cn(
-        "relative grid place-items-center size-16 rounded-full bg-transparent p-3 text-black",
+        "relative grid place-items-center p-[0.95rem] rounded-full bg-transparent text-black",
         className
       )}>
       <div
@@ -35,7 +35,7 @@ export default function ShineBorder({
           {
             "--border-width": `${borderWidth}px`,
             "--border-radius": `${borderRadius}px`,
-            // "--duration": `${duration}s`,
+            "--duration": `${duration}s`,
             "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
             "--background-radial-gradient": `radial-gradient(${color instanceof Array ? color.join(",") : color})`
           }

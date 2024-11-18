@@ -26,6 +26,15 @@
             "link":"",
             "github":"https://github.com/RCLQD/Gallery",
             "img":"/images/gallery.png"
+        },
+        {
+            "P_id":"4",
+            "project_name":"License Tracker",
+            "status":"Offline",
+            "description": "This website allows you to store and manage driver's license information. It helps keep records organized and provides timely notifications for expiring licenses, ensuring easy access and compliance.",
+            "link":"",
+            "github":"https://github.com/RCLQD/Inventory-System",
+            "img":"/images/inventory.png"
         }
     ]
 }
