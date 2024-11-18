@@ -9,7 +9,9 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const [currentSection, setCurrentSection] = useState("");
+  const [currentSection, setCurrentSection] = useState(
+    localStorage.getItem("currentSection") || "Home"
+  );
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -23,14 +25,12 @@ const App = () => {
     { name: "Experience", ref: experienceRef },
   ];
 
-  const scrollToSection = (section, smoothScroll = true) => {
+  const scrollToSection = (section) => {
     const sectionObj = sections.find((s) => s.name === section);
     if (sectionObj?.ref?.current) {
-      sectionObj.ref.current.scrollIntoView({
-        behavior: smoothScroll ? "smooth" : "auto",
-      });
+      sectionObj.ref.current.scrollIntoView({ behavior: "smooth" });
       setCurrentSection(section);
-      window.history.replaceState(null, "", `/${section}`);
+      localStorage.setItem("currentSection", section);
     }
   };
 
@@ -43,12 +43,15 @@ const App = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-
-    const path = window.location.pathname.replace("/", "");
-    const initialSection = sections.find((s) => s.name === path)?.name || "Home";
-    setCurrentSection(initialSection);
-    scrollToSection(initialSection, false);
   }, [theme]);
+
+  useEffect(() => {
+    const savedSection = localStorage.getItem("currentSection") || "Home";
+    const sectionObj = sections.find((s) => s.name === savedSection);
+    if (sectionObj?.ref?.current) {
+      sectionObj.ref.current.scrollIntoView({ behavior: "auto" });
+    }
+  }, []);
 
   useEffect(() => {
     const observerOptions = {
@@ -63,7 +66,7 @@ const App = () => {
           const visibleSection = sections.find((s) => s.ref.current === entry.target)?.name;
           if (visibleSection) {
             setCurrentSection(visibleSection);
-            window.history.replaceState(null, "", `/${visibleSection}`);
+            localStorage.setItem("currentSection", visibleSection);
           }
         }
       });
@@ -85,7 +88,7 @@ const App = () => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        onScrollTo={(section) => scrollToSection(section)}
+        onScrollTo={scrollToSection}
         currentSection={currentSection}
       />
       <div ref={homeRef}>
