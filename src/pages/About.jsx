@@ -1,6 +1,6 @@
 const About = ({ theme }) => {
     return(
-        <main className="grid place-items-center font-montserrat w-full h-screen">
+        <main className="grid place-items-center font-montserrat w-full py-16">
             <div className="space-y-10 px-10">
                 <section className="space-y-5">
                     <h1 className="text-5xl font-extrabold">About <span className="text-[#006FFF]">Me</span></h1>

@@ -1,0 +1,19 @@
+@keyframes blinkGrow {
+    0% {
+      opacity: 0.34;
+      r: 8;
+    }
+    50% {
+      opacity: 1;
+      r: 10;
+    }
+    100% {
+      opacity: 0.34;
+      r: 8;
+    }
+  }
+  
+.animate-blink-grow {
+    animation: blinkGrow 1.5s ease-in-out infinite;
+}
+  

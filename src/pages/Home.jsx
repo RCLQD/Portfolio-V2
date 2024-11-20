@@ -1,5 +1,6 @@
 import { File } from 'lucide-react';
 import Resume from '../assets/Reysil Clarion Resume.pdf'
+import Indicator from '@/components/Indicator';
 
 const Home = ({ theme }) => {
     return(
@@ -91,42 +92,39 @@ const Home = ({ theme }) => {
                 </svg>
             </div>
             <section className="grid place-items-center h-screen w-full">
-            <div className='w-3/5 grid gap-y-6 py-36'>
-            <div className='flex justify-center w-full'>
-            <span className="whitespace-nowrap flex justify-center items-center gap-x-2 rounded-full bg-[#222222] px-4 py-1.5">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="8" r="8" fill="#10B981" fillOpacity="0.34"/>
-                    <circle cx="8" cy="8" r="4" fill="#10B981"/>
-                </svg>
-                <p className="text-white">
-                    Hello! I’m open for projects
-                </p>
-            </span>
-            </div>
-            <h1 className="font-extrabold text-5xl text-center">
-                Experienced <span className="text-[#006FFF]">full-stack developer</span> shaping code into <span className="text-[#006FFF]">digital experience</span>.
-            </h1>
-            <p className="text-center px-24">Helping startups and brands to craft expressive and engaging solutions for their software needs.</p>
-            <div className="flex justify-center gap-x-6 mt-5">
-                <a 
-                    href={Resume}
-                    download
-                    className={`flex items-center gap-x-2 border-[1.5px] rounded-full px-7 py-2 
-                    ${theme === 'dark' ? 'bg-white text-black hover:bg-black hover:text-white border-white' : 'bg-black text-white hover:bg-white hover:text-black border-black'}`}
-                >
-                    <File className="size-5 text-[#006FFF]" />
-                    Resume
-                </a>
-                <a 
-                    href="mailto:reysilclarion17@gmail.com"
-                    target="_blank" rel="noopener noreferrer" 
-                    className={`flex items-center gap-x-2 border-[1.5px] rounded-full px-7 py-2 
-                    ${theme === 'dark' ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'}`}
-                >
-                    <span className="size-3 bg-[#006FFF] rounded-full"></span>
-                    Contacts
-                </a>
-            </div>
+            <div className='w-full md:w-4/5 lg:w-3/5 grid gap-y-6 lg:py-36 px-1 md:px-0 '>
+                <div className='flex justify-center w-full'>
+                    <span className="whitespace-nowrap flex justify-center items-center gap-x-1 rounded-full bg-[#222222] px-4 py-1.5">
+                        <Indicator />
+                        <p className="text-white text-sm md:text-base">
+                            Hello! I’m open for projects
+                        </p>
+                    </span>
+                </div>
+                <h1 className="font-extrabold text-2xl md:text-4xl lg:text-5xl text-center">
+                    Experienced <span className="text-[#006FFF]">full-stack developer</span> shaping code into <span className="text-[#006FFF]">digital experience</span>.
+                </h1>
+                <p className="text-center text-sm md:text-base px-10 lg:px-24">Helping startups and brands to craft expressive and engaging solutions for their software needs.</p>
+                <div className="grid md:flex justify-center gap-y-4 gap-x-6 mt-5">
+                    <a 
+                        href={Resume}
+                        download
+                        className={`flex items-center gap-x-2 border-[1.5px] rounded-full px-20 md:px-7 py-3 md:py-2 
+                        ${theme === 'dark' ? 'bg-white text-black hover:bg-black hover:text-white border-white' : 'bg-black text-white hover:bg-white hover:text-black border-black'}`}
+                    >
+                        <File className="size-5 text-[#006FFF]" />
+                        Resume
+                    </a>
+                    <a 
+                        href="mailto:reysilclarion17@gmail.com"
+                        target="_blank" rel="noopener noreferrer" 
+                        className={`flex items-center gap-x-2 border-[1.5px] rounded-full px-20 md:px-7 py-3 md:py-2 
+                        ${theme === 'dark' ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                    >
+                        <span className="size-3 bg-[#006FFF] rounded-full"></span>
+                        Contacts
+                    </a>
+                </div>
             </div>
             </section>
 

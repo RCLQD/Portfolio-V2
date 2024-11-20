@@ -1,6 +1,6 @@
 const Experience = ({ theme }) => {
     return(
-        <main className="flex items-center font-montserrat w-full h-screen">
+        <main className="flex items-center font-montserrat w-full py-14">
             <div className="space-y-10 px-10">
                 <section className="space-y-5">
                     <h1 className="text-5xl font-extrabold text-[#006FFF]">Exp<span className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>rience</span></h1>

@@ -10,7 +10,7 @@ const ReviewCard = ({ theme }) => {
       {projectFiles.Projects.map((project) => (
         <div
           key={project.P_id}
-          className="w-80 h-96 hover:scale-[1.02] relative group"
+          className="w-full md:w-80 h-96 hover:scale-[1.02] relative group"
           onMouseEnter={() => setHoveredProjectId(project.P_id)}
           onMouseLeave={() => setHoveredProjectId(null)}
         >
@@ -32,7 +32,7 @@ const ReviewCard = ({ theme }) => {
             >
               {project.status}
             </h1>
-            <h2 className={`text-2xl font-medium ${hoveredProjectId === project.P_id ? 'text-white' : 'text-[#8b8b8b]'}`}>{project.project_name}</h2>
+            <h2 className="text-2xl font-medium text-cyan-500">{project.project_name}</h2>
           </div>
 
           {hoveredProjectId === project.P_id && (
