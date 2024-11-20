@@ -114,7 +114,7 @@ const Work = ({ theme }) => {
             <section className="w-[21.5rem] md:w-[44.25rem] lg:w-[70rem] h-[50rem] md:h-full bg-gradient-to-r from-[#191919] to-[#7F7F7F] rounded-2xl px-10 py-9 space-y-5">
                 <div className="text-center lg:text-start space-y-2 lg:space-y-3">
                     <h1 className="text-xl md:text-3xl text-white font-semibold">Explore My Projects</h1>
-                    <p>Here are some of my projects feel free to explore them!</p>
+                    <p className="text-white">Here are some of my projects feel free to explore them!</p>
                 </div>
                 <Marquee pauseOnHover vertical={isMobile} className="[--duration:20s] h-[90%]">
                     <ReviewCard theme={theme} />
