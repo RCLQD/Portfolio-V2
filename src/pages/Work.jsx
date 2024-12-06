@@ -13,7 +13,7 @@ const setTwo = [ "MySQL", "PHP", "React.js", "Git", "Tailwind CSS", "Bootstrap" 
 const setIconOne = {
     "Figma": "devicon:figma",
     "HTML": "vscode-icons:file-type-html",
-    "CSS": "vscode-icons:file-type-css",
+    "CSS": "devicon:css3",
     "Node.js": "logos:nodejs-icon",
     "VS Code": "vscode-icons:file-type-vscode",
     "JavaScript": "vscode-icons:file-type-js-official"
@@ -116,9 +116,9 @@ const Work = ({ theme }) => {
                     <h1 className="text-xl md:text-3xl text-white font-semibold">Explore My Projects</h1>
                     <p className="text-white">Here are some of my projects feel free to explore them!</p>
                 </div>
-                <Marquee pauseOnHover vertical={isMobile} className="[--duration:20s] h-[90%]">
-                    <ReviewCard theme={theme} />
-                </Marquee>
+                    <Marquee pauseOnHover vertical={isMobile} className="[--duration:20s] h-[85%] md:h-[80%]">
+                        <ReviewCard theme={theme} />
+                    </Marquee>
             </section>
         </main>
     )

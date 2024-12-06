@@ -1,15 +1,11 @@
 @keyframes blinkGrow {
     0% {
-      opacity: 0.34;
-      r: 8;
-    }
-    50% {
       opacity: 1;
-      r: 10;
+      r: 4;
     }
     100% {
-      opacity: 0.34;
-      r: 8;
+      opacity: 0;
+      r: 10;
     }
   }
   

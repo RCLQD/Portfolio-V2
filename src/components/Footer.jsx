@@ -11,16 +11,16 @@ const Footer = ({ theme }) => {
             ) : (
                 <img src="/logos/Logo2.png" alt="Logo" className="size-12" />
             )}
-            <p>Reysil M. Clarion</p>
+            <p className='text-sm md:text-base'>Reysil M. Clarion</p>
         </aside>
         <nav className="flex items-center">
-            <Dock direction="middle" className="h-[55px] gap-x-1">
+            <Dock direction="middle" className="h-[55px] gap-x-0 md:gap-x-1">
                 <DockIcon>
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
                                 <a href="https://www.linkedin.com/in/reysilclarion/" target="_blank">
-                                    <Icon icon="circum:linkedin" className="size-10" />
+                                    <Icon icon="circum:linkedin" className="size-8 md:size-10" />
                                 </a>
                             </TooltipTrigger>
                             <TooltipContent>LinkedIn</TooltipContent>
@@ -32,7 +32,7 @@ const Footer = ({ theme }) => {
                         <Tooltip>
                             <TooltipTrigger>
                                 <a href="https://github.com/RCLQD" target="_blank">
-                                    <Icon icon="akar-icons:github-outline-fill" className="size-9" />
+                                    <Icon icon="akar-icons:github-outline-fill" className="size-7 md:size-9" />
                                 </a>
                                 </TooltipTrigger>
                             <TooltipContent>GitHub</TooltipContent>
@@ -44,7 +44,7 @@ const Footer = ({ theme }) => {
                         <Tooltip>
                             <TooltipTrigger>
                                 <a href="https://www.facebook.com/reysil.clarion.1" target="_blank">
-                                    <Icon icon="qlementine-icons:facebook-16" className="size-9" />
+                                    <Icon icon="qlementine-icons:facebook-16" className="size-7 md:size-9" />
                                 </a>   
                             </TooltipTrigger>
                             <TooltipContent>Facebook</TooltipContent>

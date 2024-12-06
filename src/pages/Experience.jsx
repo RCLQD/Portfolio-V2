@@ -4,7 +4,7 @@ const Experience = ({ theme }) => {
             <div className="space-y-10 px-10">
                 <section className="space-y-5">
                     <h1 className="text-5xl font-extrabold text-[#006FFF]">Exp<span className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>rience</span></h1>
-                    <div className="flex justify-between gap-x-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-x-20">
                         <div>
                             <p>January - June, 2024</p>
                             <a href="https://www.philkoei.com.ph/" target="_blank" className="hover:text-[#006FFF]">

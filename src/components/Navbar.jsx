@@ -11,7 +11,7 @@ const sectionIcons = {
     Experience: "fluent:person-accounts-20-regular"
 };
 
-const Navbar = ({ onScrollTo, theme, toggleTheme }) => {
+const Navbar = ({ onScrollTo, theme, toggleTheme, currentSection }) => {
     const [scrolled, setScrolled] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -68,16 +68,16 @@ const Navbar = ({ onScrollTo, theme, toggleTheme }) => {
                     <DrawerContent className="h-1/2" theme={theme}>
                         <section className="h-full grid place-items-center font-montserrat">
                             <div className="h-1/2 grid place-items-center grid-cols-1 gap-y-10 -mt-10">
-                            {sections.map((section) => (
-                                <button
-                                    key={section}
-                                    onClick={() => handleSectionClick(section)}
-                                    className="flex items-center gap-x-2 h-full text-sm"
-                                >
-                                     <Icon icon={sectionIcons[section]} className="size-6" />
-                                    {section.toUpperCase()}
-                                </button>
-                            ))}
+                                {sections.map((section) => (
+                                    <button
+                                        key={section}
+                                        onClick={() => handleSectionClick(section)}
+                                        className="flex items-center gap-x-2 h-full text-sm"
+                                    >
+                                        <Icon icon={sectionIcons[section]} className="size-6" />
+                                        {section.toUpperCase()}
+                                    </button>
+                                ))}
                             </div>
                         </section>
                     </DrawerContent>
@@ -87,7 +87,7 @@ const Navbar = ({ onScrollTo, theme, toggleTheme }) => {
                             <button
                                 key={section}
                                 onClick={() => handleSectionClick(section)}
-                                className="h-full text-sm border-b-2 border-transparent hover:border-blue-600"
+                                className={`h-full text-sm border-b-2 border-transparent hover:border-blue-600 ${currentSection === section ? 'border-blue-600 text-blue-600' : ''}`}
                             >
                                 {section.toUpperCase()}
                             </button>
@@ -107,27 +107,27 @@ const Navbar = ({ onScrollTo, theme, toggleTheme }) => {
                     </button>
                 </section>
                 {isMobile && (
-                <div className='flex flex-row-reverse'>
-                <section className='flex items-center'>
-                    {theme === 'light' ? (
-                        <img src="/logos/Logo1.png" alt="Logo" className="size-10 cursor-pointer" onClick={() => onScrollTo("Home")} />
-                    ) : (
-                        <img src="/logos/Logo2.png" alt="Logo" className="size-10 cursor-pointer" onClick={() => onScrollTo("Home")} />
-                    )}
-                </section>
-                <section className="flex items-center">
-                    <button 
-                        onClick={toggleTheme} 
-                        className={`p-2 rounded-md hover:bg-opacity-20 ${theme === 'dark' ? 'hover:bg-white' : 'hover:bg-[#ccd2d8]'}`}
-                    >
-                        {theme === 'light' ? (
-                            <Icon icon="bi:cloud-sun" className='size-6' />
-                        ) : (
-                            <Icon icon="bi:cloud-moon" className='size-6' />
-                        )}
-                    </button>
-                </section>
-                </div>
+                    <div className='flex flex-row-reverse'>
+                        <section className='flex items-center'>
+                            {theme === 'light' ? (
+                                <img src="/logos/Logo1.png" alt="Logo" className="size-10 cursor-pointer" onClick={() => onScrollTo("Home")} />
+                            ) : (
+                                <img src="/logos/Logo2.png" alt="Logo" className="size-10 cursor-pointer" onClick={() => onScrollTo("Home")} />
+                            )}
+                        </section>
+                        <section className="flex items-center">
+                            <button 
+                                onClick={toggleTheme} 
+                                className={`p-2 rounded-md hover:bg-opacity-20 ${theme === 'dark' ? 'hover:bg-white' : 'hover:bg-[#ccd2d8]'}`}
+                            >
+                                {theme === 'light' ? (
+                                    <Icon icon="bi:cloud-sun" className='size-6' />
+                                ) : (
+                                    <Icon icon="bi:cloud-moon" className='size-6' />
+                                )}
+                            </button>
+                        </section>
+                    </div>
                 )}
             </nav>
         </Drawer>
